@@ -1,0 +1,18 @@
+name: docker-tag-check
+description: Check for docker tag existence
+
+inputs:
+  files:
+    description: File names need to compute checksum
+    required: true
+  files_separator:
+    description: Separator used to split the `files` input
+    required: false
+outputs:
+  sha256:
+    description: Full sha256 hash
+  short256:
+    description: First 6 character of hash
+runs:
+  using: node20
+  main: index.js
